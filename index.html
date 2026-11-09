@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eduardo Rabiella · Portafolio 98</title>
+  <meta name="description" content="Portafolio de proyectos y certificaciones de Eduardo Rabiella — edición Windows 98 / vaporwave." />
+  <meta name="theme-color" content="#2b0b4f" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='7' height='7' fill='%23ff71ce'/%3E%3Crect x='9' width='7' height='7' fill='%2301cdfe'/%3E%3Crect y='9' width='7' height='7' fill='%2305ffa1'/%3E%3Crect x='9' y='9' width='7' height='7' fill='%23fffb96'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=VT323&display=swap" rel="stylesheet" />
+
+  <!-- 98.css v0.1.21 (vendorizado) — https://jdan.github.io/98.css -->
+  <link rel="stylesheet" href="assets/vendor/98css/98.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- ========== PANTALLA DE ARRANQUE ========== -->
+  <div id="boot" class="boot" aria-hidden="true">
+    <div class="boot-inner">
+      <p class="boot-logo"><span>Windows</span><b>98</b><i>ヴェイパー</i></p>
+      <pre id="boot-log" class="boot-log"></pre>
+      <div class="progress-indicator segmented boot-bar">
+        <span id="boot-progress" class="progress-indicator-bar" style="width: 0%"></span>
+      </div>
+      <p class="boot-skip">Haz clic o presiona una tecla para omitir</p>
+    </div>
+  </div>
+
+  <!-- ========== FONDO VAPORWAVE ========== -->
+  <div class="scene" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="sun"></div>
+    <div class="mountains"></div>
+    <div class="grid-floor"><div class="grid-lines"></div></div>
+    <div class="scanlines"></div>
+  </div>
+
+  <!-- ========== ESCRITORIO ========== -->
+  <div class="desktop">
+    <nav class="desktop-icons" aria-label="Accesos directos">
+      <button class="desk-icon" data-open="win-welcome">
+        <span class="ico ico-pc" aria-hidden="true"></span>
+        <span class="desk-label">Mi PC</span>
+      </button>
+      <button class="desk-icon" data-open="win-portfolio">
+        <span class="ico ico-folder" aria-hidden="true"></span>
+        <span class="desk-label">Proyectos</span>
+      </button>
+      <button class="desk-icon" data-open="win-certs">
+        <span class="ico ico-cert" aria-hidden="true"></span>
+        <span class="desk-label">Certificaciones</span>
+      </button>
+      <a class="desk-icon" href="https://github.com/rabolllo" target="_blank" rel="noopener">
+        <span class="ico ico-net" aria-hidden="true"></span>
+        <span class="desk-label">GitHub</span>
+      </a>
+    </nav>
+
+    <main class="windows">
+      <!-- ===== BIENVENIDA ===== -->
+      <section class="window win win-welcome" id="win-welcome" data-title="Bienvenido.exe" aria-labelledby="t-welcome">
+        <div class="title-bar">
+          <div class="title-bar-text" id="t-welcome"><span class="tb-ico ico-pc"></span>Bienvenido.exe</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize" data-act="min"></button>
+            <button aria-label="Maximize" data-act="max"></button>
+            <button aria-label="Close" data-act="close"></button>
+          </div>
+        </div>
+        <div class="window-body welcome-body">
+          <div class="hero">
+            <p class="hero-kicker">ポートフォリオ · 1998 → ∞</p>
+            <h1 class="hero-title" data-text="Eduardo Rabiella" id="hero-name">Eduardo Rabiella</h1>
+            <p class="hero-intro" id="hero-intro"></p>
+            <div class="hero-actions">
+              <button class="default" data-open="win-portfolio">Ver proyectos</button>
+              <button data-open="win-certs">Certificaciones</button>
+              <a class="btn98" href="https://github.com/rabolllo" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="crt" aria-hidden="true">
+            <div class="crt-screen">
+              <pre id="terminal" class="terminal"></pre>
+            </div>
+            <div class="crt-base"></div>
+          </div>
+        </div>
+        <div class="status-bar">
+          <p class="status-bar-field">Listo</p>
+          <p class="status-bar-field marquee-field"><span class="marquee">★ ＡＥＳＴＨＥＴＩＣ ★ bienvenido a mi escritorio ★ explora los proyectos ★ ＡＥＳＴＨＥＴＩＣ ★</span></p>
+          <p class="status-bar-field" id="visit-field">C:\</p>
+        </div>
+      </section>
+
+      <!-- ===== PORTAFOLIO (CARRUSEL) ===== -->
+      <section class="window win win-portfolio" id="win-portfolio" data-title="Portafolio.exe" aria-labelledby="t-portfolio">
+        <div class="title-bar">
+          <div class="title-bar-text" id="t-portfolio"><span class="tb-ico ico-folder"></span>C:\Proyectos\Portafolio.exe</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize" data-act="min"></button>
+            <button aria-label="Maximize" data-act="max"></button>
+            <button aria-label="Close" data-act="close"></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <div class="carousel" id="carousel" role="region" aria-roledescription="carrusel" aria-label="Proyectos" tabindex="0">
+            <div class="sunken-panel carousel-viewport">
+              <div class="carousel-track" id="carousel-track"></div>
+              <div class="glitch-layer" aria-hidden="true"></div>
+            </div>
+            <div class="carousel-controls">
+              <button id="prev" aria-label="Proyecto anterior">◀ Atrás</button>
+              <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Seleccionar proyecto"></div>
+              <button id="next" aria-label="Proyecto siguiente">Siguiente ▶</button>
+            </div>
+            <div class="field-row autoplay-row">
+              <input type="checkbox" id="autoplay" checked />
+              <label for="autoplay">Reproducción automática</label>
+              <div class="progress-indicator segmented autoplay-bar" aria-hidden="true">
+                <span class="progress-indicator-bar" id="autoplay-bar"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="status-bar">
+          <p class="status-bar-field" id="carousel-status">Proyecto 1 de 1</p>
+          <p class="status-bar-field">← → para navegar</p>
+        </div>
+      </section>
+
+      <!-- ===== CERTIFICACIONES ===== -->
+      <section class="window win win-certs" id="win-certs" data-title="Certificaciones" aria-labelledby="t-certs">
+        <div class="title-bar">
+          <div class="title-bar-text" id="t-certs"><span class="tb-ico ico-cert"></span>Certificaciones</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize" data-act="min"></button>
+            <button aria-label="Maximize" data-act="max"></button>
+            <button aria-label="Close" data-act="close"></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <div class="sunken-panel certs-panel">
+            <table class="interactive certs-table">
+              <thead>
+                <tr><th>Certificación</th><th>Emisor</th><th>Fecha</th></tr>
+              </thead>
+              <tbody id="certs-body"></tbody>
+            </table>
+          </div>
+          <fieldset class="cert-detail">
+            <legend>Detalles</legend>
+            <div id="cert-detail-body" class="cert-detail-body">Selecciona una certificación.</div>
+          </fieldset>
+        </div>
+        <div class="status-bar">
+          <p class="status-bar-field" id="certs-count">0 objeto(s)</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ========== MENÚ INICIO ========== -->
+  <div class="window start-menu" id="start-menu" hidden>
+    <div class="start-side"><span>Rabiella<b>98</b></span></div>
+    <ul class="start-list">
+      <li><button data-open="win-welcome"><span class="ico ico-pc"></span>Bienvenido</button></li>
+      <li><button data-open="win-portfolio"><span class="ico ico-folder"></span>Proyectos</button></li>
+      <li><button data-open="win-certs"><span class="ico ico-cert"></span>Certificaciones</button></li>
+      <li><a href="https://github.com/rabolllo" target="_blank" rel="noopener"><span class="ico ico-net"></span>GitHub</a></li>
+      <li class="sep" role="separator"></li>
+      <li><button id="toggle-motion"><span class="ico ico-wave"></span><span id="motion-label">Animaciones: Sí</span></button></li>
+      <li><button id="shutdown"><span class="ico ico-power"></span>Apagar el sistema…</button></li>
+    </ul>
+  </div>
+
+  <!-- ========== BARRA DE TAREAS ========== -->
+  <footer class="taskbar">
+    <button class="start-btn" id="start-btn" aria-haspopup="true" aria-expanded="false"><span class="start-flag"></span><b>Inicio</b></button>
+    <div class="vertical-bar"></div>
+    <div class="task-buttons" id="task-buttons"></div>
+    <div class="tray status-field-border">
+      <span class="tray-wave" aria-hidden="true">♫</span>
+      <time id="clock">--:--</time>
+    </div>
+  </footer>
+
+  <!-- ========== APAGADO ========== -->
+  <div class="shutdown" id="shutdown-screen" hidden>
+    <p>Ya es seguro apagar<br />su equipo.</p>
+    <small>(haz clic para volver)</small>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
