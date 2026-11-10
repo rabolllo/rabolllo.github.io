@@ -9,11 +9,15 @@ Todo el contenido vive en `assets/js/data.js`:
 
 Capturas de proyectos: guárdalas en `assets/img/` y referencia la ruta en `image`.
 
+## Idiomas
+El sitio detecta el idioma del navegador (español → ES, otro → EN). El botón ES/EN de la barra de tareas cambia el idioma y guarda la elección. Para probar: `?lang=en` o `?lang=es`.
+
 ## Estructura
 ```
 index.html
 assets/css/style.css      estilos vaporwave + overrides de 98.css
-assets/js/data.js         contenido editable
+assets/js/data.js         contenido editable (textos ES/EN)
+assets/js/i18n.js         textos de la interfaz ES/EN + detección de idioma
 assets/js/main.js         ventanas, carrusel, menú Inicio, animaciones
 assets/vendor/98css/      98.css v0.1.21 + fuentes (MIT)
 ```

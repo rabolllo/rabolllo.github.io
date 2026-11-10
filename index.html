@@ -2,9 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eduardo Rabiella · Portafolio 98</title>
-  <meta name="description" content="Portafolio de proyectos y certificaciones de Eduardo Rabiella — edición Windows 98 / vaporwave." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Eduardo Rabiella · Portfolio 98</title>
+  <meta name="description" content="Eduardo Rabiella's projects and certifications — Windows 98 / vaporwave edition." />
   <meta name="theme-color" content="#2b0b4f" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='7' height='7' fill='%23ff71ce'/%3E%3Crect x='9' width='7' height='7' fill='%2301cdfe'/%3E%3Crect y='9' width='7' height='7' fill='%2305ffa1'/%3E%3Crect x='9' y='9' width='7' height='7' fill='%23fffb96'/%3E%3C/svg%3E" />
 
@@ -15,6 +15,8 @@
   <!-- 98.css v0.1.21 (vendorizado) — https://jdan.github.io/98.css -->
   <link rel="stylesheet" href="assets/vendor/98css/98.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Idioma: se carga antes para fijar <html lang> -->
+  <script src="assets/js/i18n.js"></script>
 </head>
 <body>
   <!-- ========== PANTALLA DE ARRANQUE ========== -->
@@ -25,7 +27,7 @@
       <div class="progress-indicator segmented boot-bar">
         <span id="boot-progress" class="progress-indicator-bar" style="width: 0%"></span>
       </div>
-      <p class="boot-skip">Haz clic o presiona una tecla para omitir</p>
+      <p class="boot-skip" data-i18n="boot.skip">Haz clic o presiona una tecla para omitir</p>
     </div>
   </div>
 
@@ -40,34 +42,30 @@
 
   <!-- ========== ESCRITORIO ========== -->
   <div class="desktop">
-    <nav class="desktop-icons" aria-label="Accesos directos">
+    <nav class="desktop-icons" data-i18n-attr="aria-label:nav.shortcuts" aria-label="Accesos directos">
       <button class="desk-icon" data-open="win-welcome">
         <span class="ico ico-pc" aria-hidden="true"></span>
-        <span class="desk-label">Mi PC</span>
+        <span class="desk-label" data-i18n="desk.pc">Mi PC</span>
       </button>
-
       <a class="desk-icon" href="https://github.com/rabolllo" target="_blank" rel="noopener">
         <span class="ico ico-net" aria-hidden="true"></span>
-        <span class="desk-label">GitHub</span>
+        <span class="desk-label" data-i18n="desk.github">GitHub</span>
       </a>
-      <a class="desk-icon" href="https://telegram.me" target="_blank" rel="noopener">
+      <a class="desk-icon" href="https://t.me/ERM_DEV1" target="_blank" rel="noopener">
         <span class="ico ico-telegram" aria-hidden="true"></span>
-        <span class="desk-label">Telegram</span>
+        <span class="desk-label" data-i18n="desk.telegram">Telegram</span>
       </a>
-
-      <a class="desk-icon" href="mailto:rabielladev@gmail.com" target="_blank" rel="noopener">
+      <a class="desk-icon" href="mailto:rabielladev@gmail.com">
         <span class="ico ico-mail" aria-hidden="true"></span>
-        <span class="desk-label">Correo</span>
+        <span class="desk-label" data-i18n="desk.mail">Correo</span>
       </a>
-      
-      
     </nav>
 
     <main class="windows">
       <!-- ===== BIENVENIDA ===== -->
-      <section class="window win win-welcome" id="win-welcome" data-title="Bienvenido.exe" aria-labelledby="t-welcome">
+      <section class="window win win-welcome" id="win-welcome" data-title-key="win.welcome" aria-labelledby="t-welcome">
         <div class="title-bar">
-          <div class="title-bar-text" id="t-welcome"><span class="tb-ico ico-pc"></span>Bienvenido.exe</div>
+          <div class="title-bar-text" id="t-welcome"><span class="tb-ico ico-pc"></span><span data-i18n="win.welcome">Bienvenido.exe</span></div>
           <div class="title-bar-controls">
             <button aria-label="Minimize" data-act="min"></button>
             <button aria-label="Maximize" data-act="max"></button>
@@ -80,8 +78,8 @@
             <h1 class="hero-title" data-text="Eduardo Rabiella" id="hero-name">Eduardo Rabiella</h1>
             <p class="hero-intro" id="hero-intro"></p>
             <div class="hero-actions">
-              <button class="default" data-open="win-portfolio">Ver proyectos</button>
-              <button data-open="win-certs">Certificaciones</button>
+              <button class="default" data-open="win-portfolio" data-i18n="hero.projects">Ver proyectos</button>
+              <button data-open="win-certs" data-i18n="hero.certs">Certificaciones</button>
               <a class="btn98" href="https://github.com/rabolllo" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </div>
@@ -93,16 +91,16 @@
           </div>
         </div>
         <div class="status-bar">
-          <p class="status-bar-field">Listo</p>
-          <p class="status-bar-field marquee-field"><span class="marquee">★ ＡＥＳＴＨＥＴＩＣ ★ bienvenido a mi escritorio ★ explora los proyectos ★ ＡＥＳＴＨＥＴＩＣ ★</span></p>
+          <p class="status-bar-field" data-i18n="status.ready">Listo</p>
+          <p class="status-bar-field marquee-field"><span class="marquee" data-i18n="status.marquee"></span></p>
           <p class="status-bar-field" id="visit-field">C:\</p>
         </div>
       </section>
 
       <!-- ===== PORTAFOLIO (CARRUSEL) ===== -->
-      <section class="window win win-portfolio" id="win-portfolio" data-title="Portafolio.exe" aria-labelledby="t-portfolio">
+      <section class="window win win-portfolio" id="win-portfolio" data-title-key="win.portfolio" aria-labelledby="t-portfolio">
         <div class="title-bar">
-          <div class="title-bar-text" id="t-portfolio"><span class="tb-ico ico-folder"></span>C:\Proyectos\Portafolio.exe</div>
+          <div class="title-bar-text" id="t-portfolio"><span class="tb-ico ico-folder"></span><span data-i18n="win.portfolioPath">C:\Proyectos\Portafolio.exe</span></div>
           <div class="title-bar-controls">
             <button aria-label="Minimize" data-act="min"></button>
             <button aria-label="Maximize" data-act="max"></button>
@@ -110,19 +108,19 @@
           </div>
         </div>
         <div class="window-body">
-          <div class="carousel" id="carousel" role="region" aria-roledescription="carrusel" aria-label="Proyectos" tabindex="0">
+          <div class="carousel" id="carousel" role="region" aria-roledescription="carousel" data-i18n-attr="aria-label:car.region" tabindex="0">
             <div class="sunken-panel carousel-viewport">
               <div class="carousel-track" id="carousel-track"></div>
               <div class="glitch-layer" aria-hidden="true"></div>
             </div>
             <div class="carousel-controls">
-              <button id="prev" aria-label="Proyecto anterior">◀ Atrás</button>
-              <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Seleccionar proyecto"></div>
-              <button id="next" aria-label="Proyecto siguiente">Siguiente ▶</button>
+              <button id="prev" data-i18n="car.prev" data-i18n-attr="aria-label:car.prevAria">◀ Atrás</button>
+              <div class="carousel-dots" id="carousel-dots" role="tablist" data-i18n-attr="aria-label:car.dots"></div>
+              <button id="next" data-i18n="car.next" data-i18n-attr="aria-label:car.nextAria">Siguiente ▶</button>
             </div>
             <div class="field-row autoplay-row">
               <input type="checkbox" id="autoplay" checked />
-              <label for="autoplay">Reproducción automática</label>
+              <label for="autoplay" data-i18n="car.autoplay">Reproducción automática</label>
               <div class="progress-indicator segmented autoplay-bar" aria-hidden="true">
                 <span class="progress-indicator-bar" id="autoplay-bar"></span>
               </div>
@@ -130,15 +128,15 @@
           </div>
         </div>
         <div class="status-bar">
-          <p class="status-bar-field" id="carousel-status">Proyecto 1 de 1</p>
-          <p class="status-bar-field">← → para navegar</p>
+          <p class="status-bar-field" id="carousel-status"></p>
+          <p class="status-bar-field" data-i18n="car.hint">← → para navegar</p>
         </div>
       </section>
 
       <!-- ===== CERTIFICACIONES ===== -->
-      <section class="window win win-certs" id="win-certs" data-title="Certificaciones" aria-labelledby="t-certs">
+      <section class="window win win-certs" id="win-certs" data-title-key="win.certs" aria-labelledby="t-certs">
         <div class="title-bar">
-          <div class="title-bar-text" id="t-certs"><span class="tb-ico ico-cert"></span>Certificaciones</div>
+          <div class="title-bar-text" id="t-certs"><span class="tb-ico ico-cert"></span><span data-i18n="win.certs">Certificaciones</span></div>
           <div class="title-bar-controls">
             <button aria-label="Minimize" data-act="min"></button>
             <button aria-label="Maximize" data-act="max"></button>
@@ -149,45 +147,85 @@
           <div class="sunken-panel certs-panel">
             <table class="interactive certs-table">
               <thead>
-                <tr><th>Certificación</th><th>Emisor</th><th>Fecha</th></tr>
+                <tr>
+                  <th data-i18n="certs.name">Certificación</th>
+                  <th data-i18n="certs.issuer">Emisor</th>
+                  <th class="col-date" data-i18n="certs.date">Fecha</th>
+                </tr>
               </thead>
               <tbody id="certs-body"></tbody>
             </table>
           </div>
-          <fieldset class="cert-detail">
-            <legend>Detalles</legend>
-            <div id="cert-detail-body" class="cert-detail-body">Selecciona una certificación.</div>
+          <fieldset class="cert-detail" id="cert-detail">
+            <legend data-i18n="certs.details">Detalles</legend>
+            <div id="cert-detail-body" class="cert-detail-body"></div>
           </fieldset>
         </div>
         <div class="status-bar">
-          <p class="status-bar-field" id="certs-count">0 objeto(s)</p>
+          <p class="status-bar-field" id="certs-count"></p>
         </div>
       </section>
     </main>
   </div>
 
+  <!-- ========== ANUNCIO (AD) ========== -->
+  <section class="window ad-win" id="ad" role="dialog" aria-labelledby="ad-title" hidden>
+    <div class="title-bar">
+      <div class="title-bar-text"><span class="tb-ico ico-wave"></span><span id="ad-title" data-i18n="ad.title">¡Oferta!.exe</span></div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" id="ad-close"></button>
+      </div>
+    </div>
+    <div class="window-body ad-body">
+      <span class="ad-burst" aria-hidden="true"><span data-i18n="ad.burst">¡NUEVO!</span></span>
+      <p class="ad-kicker" aria-hidden="true">★ ＤＥＳＩＧＮ ★</p>
+      <p class="ad-text" data-i18n="ad.text">¿Necesitas un diseño para tu marca? ¡Contáctame!</p>
+      <a class="btn98 ad-cta" id="ad-cta" href="https://www.instagram.com/shiroashuri/" target="_blank" rel="noopener" data-i18n="ad.cta">Haz click aquí</a>
+      <p class="ad-sub" data-i18n="ad.sub">@shiroashuri en Instagram</p>
+    </div>
+  </section>
+
+  <!-- ========== VISOR DE IMÁGENES ========== -->
+  <dialog class="window viewer" id="viewer" aria-labelledby="viewer-title">
+    <div class="title-bar">
+      <div class="title-bar-text"><span class="tb-ico ico-cert"></span><span id="viewer-title"></span></div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" id="viewer-close"></button>
+      </div>
+    </div>
+    <div class="window-body viewer-body">
+      <div class="sunken-panel viewer-frame"><img id="viewer-img" alt="" /></div>
+    </div>
+    <div class="status-bar">
+      <p class="status-bar-field" id="viewer-name"></p>
+      <p class="status-bar-field viewer-hint" data-i18n="viewer.hint"></p>
+    </div>
+  </dialog>
+
   <!-- ========== MENÚ INICIO ========== -->
   <div class="window start-menu" id="start-menu" hidden>
-    <div class="start-side"><span>Rabiella<b>98</b></span></div>
+    <div class="start-side"><span>Win<b>98</b></span></div>
     <ul class="start-list">
-      <li><button data-open="win-welcome"><span class="ico ico-pc"></span>Bienvenido</button></li>
-      <li><button data-open="win-portfolio"><span class="ico ico-folder"></span>Proyectos</button></li>
-      <li><button data-open="win-certs"><span class="ico ico-cert"></span>Certificaciones</button></li>
+      <li><button data-open="win-welcome"><span class="ico ico-pc"></span><span data-i18n="menu.welcome">Bienvenido</span></button></li>
+      <li><button data-open="win-portfolio"><span class="ico ico-folder"></span><span data-i18n="menu.projects">Proyectos</span></button></li>
+      <li><button data-open="win-certs"><span class="ico ico-cert"></span><span data-i18n="menu.certs">Certificaciones</span></button></li>
       <li><a href="https://github.com/rabolllo" target="_blank" rel="noopener"><span class="ico ico-net"></span>GitHub</a></li>
-      <li><a href="https://telegram.me" target="_blank" rel="noopener"><span class="ico ico-telegram"></span>Telegram</a></li>
-      <li><a href="mailto:rabielladev@gmail.com" target="_blank" rel="noopener"><span class="ico ico-mail"></span>Correo</a></li>
+      <li><a href="https://t.me/ERM_DEV1" target="_blank" rel="noopener"><span class="ico ico-telegram"></span>Telegram</a></li>
+      <li><a href="mailto:rabielladev@gmail.com"><span class="ico ico-mail"></span><span data-i18n="menu.mail">Correo</span></a></li>
       <li class="sep" role="separator"></li>
+      <li><button id="menu-lang"><span class="ico ico-globe"></span><span data-i18n="menu.lang">Language: English</span></button></li>
       <li><button id="toggle-motion"><span class="ico ico-wave"></span><span id="motion-label">Animaciones: Sí</span></button></li>
-      <li><button id="shutdown"><span class="ico ico-power"></span>Apagar el sistema…</button></li>
+      <li><button id="shutdown"><span class="ico ico-power"></span><span data-i18n="menu.shutdown">Apagar el sistema…</span></button></li>
     </ul>
   </div>
 
   <!-- ========== BARRA DE TAREAS ========== -->
   <footer class="taskbar">
-    <button class="start-btn" id="start-btn" aria-haspopup="true" aria-expanded="false"><span class="start-flag"></span><b>Inicio</b></button>
+    <button class="start-btn" id="start-btn" aria-haspopup="true" aria-expanded="false"><span class="start-flag"></span><b data-i18n="task.start">Inicio</b></button>
     <div class="vertical-bar"></div>
     <div class="task-buttons" id="task-buttons"></div>
     <div class="tray status-field-border">
+      <button class="tray-lang" id="lang-btn" data-i18n-attr="aria-label:task.lang;title:task.lang">ES</button>
       <span class="tray-wave" aria-hidden="true">♫</span>
       <time id="clock">--:--</time>
     </div>
@@ -195,8 +233,8 @@
 
   <!-- ========== APAGADO ========== -->
   <div class="shutdown" id="shutdown-screen" hidden>
-    <p>Ya es seguro apagar<br />su equipo.</p>
-    <small>(haz clic para volver)</small>
+    <p id="shutdown-msg"></p>
+    <small data-i18n="shutdown.back">(haz clic para volver)</small>
   </div>
 
   <script src="assets/js/data.js"></script>
